@@ -1,0 +1,13 @@
+B:\HeThongTroGiup\Final\Final\bin\Debug\Final.exe.config
+B:\HeThongTroGiup\Final\Final\bin\Debug\Final.exe
+B:\HeThongTroGiup\Final\Final\bin\Debug\Final.pdb
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.Properties.Resources.resources
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.csproj.GenerateResource.Cache
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.csproj.CoreCompileInputs.cache
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.exe
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.pdb
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.csprojResolveAssemblyReference.cache
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.QuanLySV.resources
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.Home.resources
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.TuVan.resources
+B:\HeThongTroGiup\Final\Final\obj\Debug\Final.AddOrEdit.resources
