@@ -45,11 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOrEdit.cs">
+    <Compile Include="AddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEdit.Designer.cs">
-      <DependentUpon>AddOrEdit.cs</DependentUpon>
+    <Compile Include="AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\DTO_SinhVien.cs" />
+    <Compile Include="Business\DAL_SinhVien.cs" />
+    <Compile Include="ConnectDB\DBConnect.cs" />
+    <Compile Include="EditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStudent.Designer.cs">
+      <DependentUpon>EditStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -65,14 +74,23 @@
     <Compile Include="QuanLySV.Designer.cs">
       <DependentUpon>QuanLySV.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowStudent.Designer.cs">
+      <DependentUpon>ShowStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="TuVan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TuVan.Designer.cs">
       <DependentUpon>TuVan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddOrEdit.resx">
-      <DependentUpon>AddOrEdit.cs</DependentUpon>
+    <EmbeddedResource Include="AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditStudent.resx">
+      <DependentUpon>EditStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -89,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="QuanLySV.resx">
       <DependentUpon>QuanLySV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowStudent.resx">
+      <DependentUpon>ShowStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TuVan.resx">
       <DependentUpon>TuVan.cs</DependentUpon>
@@ -147,6 +168,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\view.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
