@@ -38,7 +38,7 @@ namespace Final
 
 
             cbbKhoa.ValueMember = "id";
-            cbbKhoa.DisplayMember = "khoa";
+            cbbKhoa.DisplayMember = "ma_khoa_hoc";
             cbbKhoa.DataSource = dal_sv.getDataForSelectBox("khoa_hoc");
 
             cbbCoQuan.ValueMember = "id";

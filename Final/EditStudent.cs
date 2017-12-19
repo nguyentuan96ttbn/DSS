@@ -33,7 +33,7 @@ namespace Final
 
 
             cbbKhoa.ValueMember = "id";
-            cbbKhoa.DisplayMember = "khoa";
+            cbbKhoa.DisplayMember = "ma_khoa_hoc";
             cbbKhoa.DataSource = dal_sv.getDataForSelectBox("khoa_hoc");
 
             cbbCoQuan.ValueMember = "id";
@@ -114,7 +114,7 @@ namespace Final
 
                 if (drvNganh != null)
                 {
-                    nganh = drvNganh.Row["ma_nganh"] as string;
+                    nganh = drvNganh.Row["ma_nganh_dao_tao"] as string;
                 }
 
                 //Nghe
@@ -123,7 +123,7 @@ namespace Final
 
                 if (drvNghe != null)
                 {
-                    nghe = drvNghe.Row["ma_nganh"] as string;
+                    nghe = drvNghe.Row["ma_nganh_nghe"] as string;
                 }
 
                 //Dan toc
@@ -152,7 +152,7 @@ namespace Final
 
                 if (drvKhoa != null)
                 {
-                    khoahoc = drvKhoa.Row["khoa"] as string;
+                    khoahoc = drvKhoa.Row["ma_khoa_hoc"] as string;
                 }
 
                 // Tạo DTo

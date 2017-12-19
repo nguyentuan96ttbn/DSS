@@ -15,7 +15,7 @@ namespace FinalProject
         public DataTable getSinhVien()
         {
             //string sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, dan_toc, gioi_tinh, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe as ten_nganh_lam_viec, khoa_hoc.khoa as khoa_hoc FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh = sinh_vien.ma_nganh inner join khoa_hoc on khoa_hoc.khoa = sinh_vien.khoa where sinh_vien.nganh_nghe IS NULL";
-            SqlDataAdapter da = new SqlDataAdapter("SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, khoa_hoc, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh = sinh_vien.ma_nganh_dao_tao inner join nganh_nghe on (nganh_nghe.ma_nganh = sinh_vien.ma_nganh_nghe)", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh_dao_tao = sinh_vien.ma_nganh_dao_tao inner join nganh_nghe on (nganh_nghe.ma_nganh_nghe = sinh_vien.ma_nganh_nghe)", _conn);
            
             DataTable dtSinhVien = new DataTable();
             da.Fill(dtSinhVien);
@@ -28,7 +28,7 @@ namespace FinalProject
            
             if (str == "nganh_dao_tao")
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_nganh, ten_nganh from nganh_dao_tao", _conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_nganh_dao_tao, ten_nganh from nganh_dao_tao", _conn);
                 da.Fill(dtSinhVien);
                 dtSinhVien.Columns.Add("Column1", typeof(string));
                 DataRow dr;
@@ -38,7 +38,7 @@ namespace FinalProject
             }
             else if (str == "nganh_nghe")
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_nganh, ten_nganh from nganh_nghe", _conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_nganh_nghe, ten_nganh from nganh_nghe", _conn);
                 da.Fill(dtSinhVien);
                 dtSinhVien.Columns.Add("Column1", typeof(string));
                 DataRow dr;
@@ -48,7 +48,7 @@ namespace FinalProject
             }
             else if (str == "khoa_hoc")
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct khoa from khoa_hoc", _conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_khoa_hoc from khoa_hoc", _conn);
                 da.Fill(dtSinhVien);
                 dtSinhVien.Columns.Add("Column1", typeof(string));
                 DataRow dr;
@@ -79,7 +79,7 @@ namespace FinalProject
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("INSERT INTO sinh_vien(ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, khoa_hoc, hoc_luc, ma_nganh_dao_tao, ma_nganh_nghe, ten_co_quan) VALUES ('{0}',N'{1}','{2}',N'{3}',N'{4}',N'{5}','{6}',N'{7}',N'{8}',N'{9}',N'{10}')", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH,sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN,sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN);
+                string SQL = string.Format("INSERT INTO sinh_vien(ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, ma_nganh_dao_tao, ma_nganh_nghe, ten_co_quan) VALUES ('{0}',N'{1}','{2}',N'{3}',N'{4}',N'{5}','{6}',N'{7}',N'{8}',N'{9}',N'{10}')", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH,sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN,sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN);
                 // Command
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
                 // Query và kiểm tra
@@ -111,7 +111,7 @@ namespace FinalProject
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("UPDATE sinh_vien SET ma_sinh_vien= '{0}', ho_ten = N'{1}', ngay_sinh='{2}', gioi_tinh = N'{3}', dan_toc=N'{4}', que_quan=N'{5}', khoa_hoc = '{6}', hoc_luc = N'{7}', ma_nganh_dao_tao = '{8}', ma_nganh_nghe = '{9}',  ten_co_quan = N'{10}' WHERE ma_sinh_vien = '{11}'", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH, sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN, sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN, sv.MA_SV);
+                string SQL = string.Format("UPDATE sinh_vien SET ma_sinh_vien= '{0}', ho_ten = N'{1}', ngay_sinh='{2}', gioi_tinh = N'{3}', dan_toc=N'{4}', que_quan=N'{5}', ma_khoa_hoc = '{6}', hoc_luc = N'{7}', ma_nganh_dao_tao = '{8}', ma_nganh_nghe = '{9}',  ten_co_quan = N'{10}' WHERE ma_sinh_vien = '{11}'", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH, sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN, sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN, sv.MA_SV);
                 // Command
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
 

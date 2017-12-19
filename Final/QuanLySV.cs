@@ -169,7 +169,7 @@ namespace Final
             DBConnect db = new DBConnect();
             db._conn.Open();
             //string union_sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, dan_toc, gioi_tinh, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe as ten_nganh_lam_viec, khoa_hoc.khoa as khoa_hoc FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh = sinh_vien.ma_nganh inner join khoa_hoc on khoa_hoc.khoa = sinh_vien.khoa where sinh_vien.nganh_nghe IS NULL";
-            string sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, khoa_hoc, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh = sinh_vien.ma_nganh_dao_tao inner join nganh_nghe on (nganh_nghe.ma_nganh = sinh_vien.ma_nganh_nghe) AND 1 = 1";
+            string sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh_dao_tao = sinh_vien.ma_nganh_dao_tao inner join nganh_nghe on (nganh_nghe.ma_nganh_nghe = sinh_vien.ma_nganh_nghe) AND 1 = 1";
             string gioitinh = "";
             if(cbbGioiTinh.Text == ""){
                 gioitinh = "";
@@ -348,7 +348,6 @@ namespace Final
                     }
                 }
             }
-            System.Console.WriteLine(strKH);
 
             if (strKH == "")
             {
@@ -359,19 +358,18 @@ namespace Final
                 string[] khoa_hoc = strKH.Split(delimiterChars);
                 if (khoa_hoc.Length == 1)
                 {
-                    sql += " AND khoa_hoc = N'" + khoa_hoc[0] + "'";
+                    sql += " AND ma_khoa_hoc = N'" + khoa_hoc[0] + "'";
                 }
                 else
                 {
-                    sql += " AND (khoa_hoc = N'" + khoa_hoc[0] + "'";
+                    sql += " AND (ma_khoa_hoc = N'" + khoa_hoc[0] + "'";
                     for (int i = 1; i < khoa_hoc.Length; i++)
                     {
-                        sql += "OR khoa_hoc = N'" + khoa_hoc[i] + "'";
+                        sql += "OR ma_khoa_hoc = N'" + khoa_hoc[i] + "'";
                     }
                     sql += ")";
                 }
             }
-            System.Console.WriteLine(sql);
 
             SqlDataAdapter da = new SqlDataAdapter(sql, db._conn);
             DataTable dtSinhVien = new DataTable();

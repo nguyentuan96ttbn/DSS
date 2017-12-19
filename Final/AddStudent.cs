@@ -23,7 +23,7 @@ namespace Final
         public void GUI_getDataForCombobox()
         {
             cbbKhoa.ValueMember = "id";
-            cbbKhoa.DisplayMember = "khoa";
+            cbbKhoa.DisplayMember = "ma_khoa_hoc";
             cbbKhoa.DataSource = dal_sv.getDataForSelectBox("khoa_hoc");
 
             cbbNganh.ValueMember = "id";
@@ -56,7 +56,7 @@ namespace Final
 
                 if (drvNganh != null)
                 {
-                    nganh = drvNganh.Row["ma_nganh"] as string;
+                    nganh = drvNganh.Row["ma_nganh_dao_tao"] as string;
                 }
 
                 //Nghe
@@ -65,7 +65,7 @@ namespace Final
 
                 if (drvNghe != null)
                 {
-                    nghe = drvNghe.Row["ma_nganh"] as string;
+                    nghe = drvNghe.Row["ma_nganh_nghe"] as string;
                 }
 
                 //Dan toc
@@ -94,7 +94,7 @@ namespace Final
     
                 if (drvKhoa != null)
                 {
-                    khoahoc = drvKhoa.Row["khoa"] as string;
+                    khoahoc = drvKhoa.Row["ma_khoa_hoc"] as string;
                 }
                 // Tạo DTo
                 DTO_SinhVien sv = new DTO_SinhVien(txtMaSV.Text, txtHoTen.Text, dateNgaysinh.Text, gioitinh, dantoc, quequan, khoahoc, hocluc, nganh, nghe, coquan);

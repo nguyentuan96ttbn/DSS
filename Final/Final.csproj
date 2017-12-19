@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\import.png" />
+    <Content Include="ConnectDB\Config.txt" />
     <Content Include="Resources\refresh.png" />
     <Content Include="Resources\view.png" />
   </ItemGroup>

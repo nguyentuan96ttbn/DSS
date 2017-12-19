@@ -206,6 +206,8 @@
             // 
             // dgvStudent
             // 
+            this.dgvStudent.AllowUserToAddRows = false;
+            this.dgvStudent.AllowUserToDeleteRows = false;
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ma_sv,
@@ -221,6 +223,7 @@
             this.ten_co_quan});
             this.dgvStudent.Location = new System.Drawing.Point(0, 0);
             this.dgvStudent.Name = "dgvStudent";
+            this.dgvStudent.ReadOnly = true;
             this.dgvStudent.Size = new System.Drawing.Size(954, 353);
             this.dgvStudent.TabIndex = 0;
             // 
@@ -229,6 +232,7 @@
             this.ma_sv.DataPropertyName = "ma_sinh_vien";
             this.ma_sv.HeaderText = "Mã sinh viên";
             this.ma_sv.Name = "ma_sv";
+            this.ma_sv.ReadOnly = true;
             this.ma_sv.Width = 80;
             // 
             // ho_ten
@@ -236,6 +240,7 @@
             this.ho_ten.DataPropertyName = "ho_ten";
             this.ho_ten.HeaderText = "Họ tên";
             this.ho_ten.Name = "ho_ten";
+            this.ho_ten.ReadOnly = true;
             this.ho_ten.Width = 120;
             // 
             // ngay_sinh
@@ -243,6 +248,7 @@
             this.ngay_sinh.DataPropertyName = "ngay_sinh";
             this.ngay_sinh.HeaderText = "Ngày sinh";
             this.ngay_sinh.Name = "ngay_sinh";
+            this.ngay_sinh.ReadOnly = true;
             this.ngay_sinh.Width = 80;
             // 
             // gioi_tinh
@@ -251,6 +257,7 @@
             this.gioi_tinh.FillWeight = 70F;
             this.gioi_tinh.HeaderText = "Giới tính";
             this.gioi_tinh.Name = "gioi_tinh";
+            this.gioi_tinh.ReadOnly = true;
             this.gioi_tinh.Width = 50;
             // 
             // dan_toc
@@ -259,6 +266,7 @@
             this.dan_toc.FillWeight = 70F;
             this.dan_toc.HeaderText = "Dân tộc";
             this.dan_toc.Name = "dan_toc";
+            this.dan_toc.ReadOnly = true;
             this.dan_toc.Width = 50;
             // 
             // que_quan
@@ -266,14 +274,16 @@
             this.que_quan.DataPropertyName = "que_quan";
             this.que_quan.HeaderText = "Quê quán";
             this.que_quan.Name = "que_quan";
+            this.que_quan.ReadOnly = true;
             this.que_quan.Width = 60;
             // 
             // khoa_hoc2
             // 
-            this.khoa_hoc2.DataPropertyName = "khoa_hoc";
+            this.khoa_hoc2.DataPropertyName = "ma_khoa_hoc";
             this.khoa_hoc2.FillWeight = 70F;
             this.khoa_hoc2.HeaderText = "Khóa học";
             this.khoa_hoc2.Name = "khoa_hoc2";
+            this.khoa_hoc2.ReadOnly = true;
             this.khoa_hoc2.Width = 80;
             // 
             // hoc_luc
@@ -281,6 +291,7 @@
             this.hoc_luc.DataPropertyName = "hoc_luc";
             this.hoc_luc.HeaderText = "Học lực";
             this.hoc_luc.Name = "hoc_luc";
+            this.hoc_luc.ReadOnly = true;
             this.hoc_luc.Width = 70;
             // 
             // nganh_dao_tao
@@ -288,6 +299,7 @@
             this.nganh_dao_tao.DataPropertyName = "ten_nganh_dao_tao";
             this.nganh_dao_tao.HeaderText = "Ngành đào tạo";
             this.nganh_dao_tao.Name = "nganh_dao_tao";
+            this.nganh_dao_tao.ReadOnly = true;
             this.nganh_dao_tao.Width = 120;
             // 
             // nganh_nghe
@@ -295,6 +307,7 @@
             this.nganh_nghe.DataPropertyName = "ten_nganh_lam_viec";
             this.nganh_nghe.HeaderText = "Ngành nghề";
             this.nganh_nghe.Name = "nganh_nghe";
+            this.nganh_nghe.ReadOnly = true;
             this.nganh_nghe.Width = 120;
             // 
             // ten_co_quan
@@ -303,6 +316,7 @@
             this.ten_co_quan.DataPropertyName = "ten_co_quan";
             this.ten_co_quan.HeaderText = "Tên cơ quan";
             this.ten_co_quan.Name = "ten_co_quan";
+            this.ten_co_quan.ReadOnly = true;
             // 
             // pnlNganh
             // 
@@ -550,6 +564,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvStudent;
         private System.Windows.Forms.Panel pnlNganh;
+        private System.Windows.Forms.Panel pnlHocLuc;
+        private System.Windows.Forms.Panel pnlKhoa;
+        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ma_sv;
         private System.Windows.Forms.DataGridViewTextBoxColumn ho_ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngay_sinh;
@@ -561,10 +580,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nganh_dao_tao;
         private System.Windows.Forms.DataGridViewTextBoxColumn nganh_nghe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten_co_quan;
-        private System.Windows.Forms.Panel pnlHocLuc;
-        private System.Windows.Forms.Panel pnlKhoa;
-        private System.Windows.Forms.Button btnXem;
-        private System.Windows.Forms.Button btnLamMoi;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -323,7 +323,6 @@
             // 
             // cbbKhoa
             // 
-            this.cbbKhoa.DisplayMember = "Nam";
             this.cbbKhoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.cbbKhoa.FormattingEnabled = true;
             this.cbbKhoa.Location = new System.Drawing.Point(536, 166);
